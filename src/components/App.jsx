@@ -1,10 +1,10 @@
-import Dogs from "pages/Collection"
-import DogDetails from "pages/DogDetails"
+import Movies from "pages/Movies"
+import MovieDetails from "pages/MovieDetails"
 import Home from "pages/Home"
 import { Route, Routes } from "react-router-dom"
 import Layout from "./Layout"
-import Subbreeds from "./Subbreeds"
-import Gallery from "./Gallery/Gallery"
+import Reviews from "./Reviews"
+import Cast from "./Cast"
 
 function App() {
        
@@ -13,10 +13,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route index element={<Home></Home>}/>
-            <Route path="dogs" element={<Dogs></Dogs>}></Route>
-            <Route path="dogs/:dogId" element={<DogDetails></DogDetails>}>
-              <Route path="subbreeds" element={<Subbreeds></Subbreeds>}></Route>
-              <Route path="gallery" element={<Gallery></Gallery>}></Route>
+            <Route path="movies" element={<Movies></Movies>}></Route>
+            <Route path="movies/:movieId" element={<MovieDetails></MovieDetails>}>
+              <Route path="reviews" element={<Reviews></Reviews>}></Route>
+              <Route path="cast" element={<Cast></Cast>}></Route>
             </Route>
           </Route>
           
