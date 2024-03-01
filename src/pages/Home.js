@@ -10,7 +10,6 @@ const Home = () => {
         
     }, []);
 
-    console.log(movies);
 
     return (
         <>

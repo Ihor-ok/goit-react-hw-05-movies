@@ -1,6 +1,6 @@
 import { Link, useSearchParams } from "react-router-dom";
 
-const Dogs = () => {
+const Movies = () => {
     // useEffect(()=>{}, []) - HTTP запит якщо потрібен
     
     // const [searchParams, setSearchParams] = useSearchParams();
@@ -30,4 +30,4 @@ const Dogs = () => {
     )
 };
 
-export default Dogs
+export default Movies
