@@ -7,6 +7,7 @@ import Reviews from "./Reviews"
 import Cast from "./Cast"
 
 function App() {
+
        
     return (
     
@@ -14,7 +15,7 @@ function App() {
           <Route path="/" element={<Layout/>}>
             <Route index element={<Home></Home>}/>
             <Route path="movies" element={<Movies></Movies>}></Route>
-            <Route path="movies/:movieId" element={<MovieDetails></MovieDetails>}>
+            <Route path="movies/:movieId" element={ <MovieDetails/>}>
               <Route path="reviews" element={<Reviews></Reviews>}></Route>
               <Route path="cast" element={<ul><Cast></Cast></ul>}></Route>
             </Route>

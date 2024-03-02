@@ -21,7 +21,7 @@ const Cast = () => {
                 return (
                     
                         <li key={cast.id}>
-                            <img src={srcPosterr + cast.profile_path} alt={cast.name} width="200" height="300"></img>
+                            <img src={srcPosterr + cast.profile_path} alt={cast.name} width="100" height="150"></img>
                             <p>{cast.name}</p>
                             <p>Character: {cast.character}</p>
                         </li>

@@ -1,6 +1,6 @@
 import fetchMovies from "components/services/getTrending ";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
@@ -10,15 +10,17 @@ const Home = () => {
         
     }, []);
 
+    const location = useLocation();
 
-    return (
+    if (movies.length !== 0) {
+        return (
         <>
             <h1>Trending today</h1>
             <ul>
                  {movies.map(mov => {
                      return (
                          <li key={mov.id}>
-                             <Link to={`movies/${mov.id}`}>{mov.title}</Link>;
+                             <Link to={`movies/${mov.id}`} state={location}>{mov.title}</Link>;
                          </li>
                         ) 
                 })}
@@ -26,6 +28,10 @@ const Home = () => {
             </ul>
         </>
     )
+    }
+
+
+    
 }
 
 export default Home;
