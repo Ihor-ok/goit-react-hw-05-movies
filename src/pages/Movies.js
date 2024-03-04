@@ -1,29 +1,41 @@
-import { Link, useSearchParams } from "react-router-dom";
+import searchMovies from "components/services/searchMovies";
+import { useState } from "react";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 
 const Movies = () => {
     // useEffect(()=>{}, []) - HTTP запит якщо потрібен
     
-    // const [searchParams, setSearchParams] = useSearchParams();
-    // const dogId = searchParams.get('dogId') ?? '';
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [movies, setMovies] = useState([]);
+    const movieTitle = searchParams.get('movie') ?? '';
+
+    const location = useLocation();
     
 
     return (
         <div>
-            <form>
-                <input type="text" />
+            <form onSubmit={(evt) => {
+                evt.preventDefault();
+                searchMovies(movieTitle).then(res => {
+                    setMovies(res);
+                    console.log(res);
+                });
+
+            }}>
+                <input type="text" value={movieTitle} onChange={evt =>  setSearchParams({movie: evt.target.value})} />
                 <button type="submit">Search</button>
             </form>
            
-            {/* <ul>
-                 {['dog-1', 'dog-2', 'dog-3', 'dog-4', 'dog-5'].map(dog => {
+            <ul>
+                 {movies.map(mov => {
                      return (
-                         <li key={dog}>
-                             <Link to={`${dog}`}>{dog}</Link>;
+                         <li key={mov.id}>
+                             <Link to={`${mov.id}`} state={location}>{mov.title}</Link>;
                          </li>
-                ) 
-            })}
+                        ) 
+                })}
 
-            </ul> */}
+            </ul>
            
 
         </div>
