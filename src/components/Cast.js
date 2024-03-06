@@ -10,14 +10,14 @@ const Cast = () => {
 
     useEffect(() => {
         fetchCast(movieId).then(res => {
-            console.log(res);
             setCasts(res);
         })
     }, [movieId])
 
     return (
         <>
-            {casts.map(cast => {
+            <ul>
+                {casts.map(cast => {
                 return (
                     
                         <li key={cast.id}>
@@ -29,6 +29,10 @@ const Cast = () => {
                     
                     
             ) }) }
+
+
+            </ul>
+            
         </>
     )
 

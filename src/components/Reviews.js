@@ -9,29 +9,38 @@ const Reviews = () => {
 
     useEffect(() => {
         fetchReviews(movieId).then(res => {
-            console.log(res);
+ 
             setReviews(res)
             
         })
     }, [movieId])
 
+
     if (reviews.length === 0) {
-        setReviews([{content: `We don't have any reviews for this movie.`}])
+        setReviews([{
+            content: `We don't have any reviews for this movie.`,
+            id: 'qwer',
+        }])
     }
     
     return (
         <>
-            {reviews.map(revie => {
-                return (
-                    <ul>
-                        <li>
-                            <p>Author: {revie.author}</p>
+            <ul>
+                 {reviews.map(revie => {
+                    return (
+                 
+                        <li key={revie.id}>
+                            <p>{revie.author}</p>
                             <p>{revie.content}</p>
-                        </li>
-                    </ul>
-                    
+                        </li>        
                 )
-            })}
+                })}
+                
+            </ul>
+               
+
+            
+            
         </>
         
     )

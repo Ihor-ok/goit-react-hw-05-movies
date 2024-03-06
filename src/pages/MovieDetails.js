@@ -1,6 +1,6 @@
 import { useMovie } from "components/MovieContext";
 import fetchDetails from "components/services/getMovieDetails";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 
 
@@ -18,7 +18,7 @@ const MovieDetails = () => {
     
     useEffect(() => {
         fetchDetails(movieId).then(res => {
-            console.log(res);
+           
             setMovie(res.title);
             setOverview(res.overview);
             setGenres(res.genres);
@@ -31,6 +31,7 @@ const MovieDetails = () => {
     }, [movieId, isNotLoading, downloaded]);
     
     const location = useLocation();
+    const backLinkLocationRef = useRef(location);
 
     const srcPosterr = `https://image.tmdb.org/t/p/w500/${poster}`
     const genresTitle = genres?.map(genre => {
@@ -42,7 +43,7 @@ const MovieDetails = () => {
            
             {isLoading && (<p>Loading...</p>)}
 
-            {isDownloaded && <Link to={location.state}>Go back</Link>}
+            {isDownloaded && <Link to={backLinkLocationRef.current.state}>Go back</Link>}
             {isDownloaded && <h2>Movie: {movie}</h2> }
             {isDownloaded && <p>User Score: {userScore.toFixed(2)}%</p>}
             {isDownloaded && <img src={srcPosterr} alt={movie} width="200" height="300" ></img>}

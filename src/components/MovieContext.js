@@ -8,10 +8,11 @@ export const MovieProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isDownloaded, setDownloaded] = useState(false);
   
+  
 
   const isNotLoading = () => {
     setIsLoading(false);
-    console.log('Click');
+   
   
   };
 
