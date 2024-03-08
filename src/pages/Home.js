@@ -15,12 +15,12 @@ const Home = () => {
     if (movies.length !== 0) {
         return (
         <>
-            <h1>Trending today</h1>
-            <ul>
+            <h1 className="title">Trending today</h1>
+            <ul className="movie-list">
                  {movies.map(mov => {
                      return (
-                         <li key={mov.id}>
-                             <Link to={`movies/${mov.id}`} state={location}>{mov.title}</Link>;
+                         <li className="movie-item" key={mov.id} >
+                             <Link className="movie-title" to={`movies/${mov.id}`} state={location}>{mov.title}</Link>;
                          </li>
                         ) 
                 })}

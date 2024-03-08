@@ -1,7 +1,8 @@
 @import-normalize; /* bring in normalize.css styles */
 
 body {
-  margin: 0;
+  margin: auto;
+  width: 1200px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -9,7 +10,177 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+li {
+  list-style-type: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header {
+
+
+  background-color: #333;
+  /* Колір фону хедера */
+  color: #fff;
+  /* Колір тексту */
+  padding: 20px;
+  /* Відступи від країв хедера */
+  display: flex;
+  /* Встановлюємо відображення flex для вирівнювання по горизонталі */
+  justify-content: space-between;
+  /* Рівномірне розподілення елементів по ширині хедера */
+  align-items: center;
+  /* Вирівнюємо елементи по вертикалі */
+
+  /* z-index: 1000; */
+}
+
+.nav-links {
+  
+  /* Видаляємо маркери списку */
+  margin: 0;
+  /* Відступи від країв списку */
+  padding: 0;
+  /* Відступи всередині елементів списку */
+}
+
+.nav-links li {
+  display: inline-block;
+  /* Встановлюємо відображення inline-block для елементів списку */
+  margin-right: 20px;
+  /* Відступ між посиланнями */
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+  /* Знімаємо відступ в кінці списку */
+}
+
+.nav-links a {
+  text-decoration: none;
+  /* Видаляємо підкреслення посилань */
+  color: #fff;
+  /* Колір тексту посилань */
+}
+
+.d-flex {
+  margin: auto;
+  margin-top: 20px;
+  width: 600px;
+}
+
+.movie-list {
+  margin: auto;
+  margin-top: 20px;
+  width: 600px;
+
+  list-style-type: none;
+    /* Видаляємо маркери списку */
+    padding: 0;
+    /* Відступи всередині списку */
+}
+
+.movie-item {
+  margin-bottom: 10px;
+  /* text-align: center; */
+}
+
+.movie-title {
+  font-size: 18px;
+    /* Розмір шрифту заголовка фільму */
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  /* Розмір шрифту заголовка */
+  font-weight: bold;
+  /* Жирний шрифт */
+  color: #333;
+  /* Колір тексту */
+  margin-bottom: 20px;
+  /* Відступ від нижнього краю заголовка */
+}
+
+.card {
+  width: 600px;
+  /* Ширина картки */
+  margin: 0 auto;
+  /* Автоматичні відступи зверху і знизу, але автоматична вирівнювання по горизонталі робить центрування */
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Тінь картки */
+  padding: 20px;
+  /* Відступ всередині картки */
+}
+
+.card-img-top {
+  width: 200px;
+  display: block;
+    /* Встановлення властивості block, щоб центрування працювало */
+    margin: 0 auto;
+    /* Автоматичні відступи по горизонталі */
+
+}
+
+.card-list-cast {
+  display: flex;
+    /* Використовуємо Flexbox */
+    flex-wrap: wrap;
+    /* Розміщуємо карточки у рядок, переносимо на новий рядок, якщо не вистачає місця */
+    gap: 20px;
+    /* Відступ між карточками */
+  padding: 0;
+    /* Зовнішній відступ списку */
+}
+
+.card-list-cast-item {
+  flex: 1;
+    /* Карточки будуть розтягуватися, щоб зайняти доступне простір */
+  border: 1px solid #ccc;
+    /* Рамка для карточки */
+    border-radius: 5px;
+    /* Закруглені кути */
+    padding: 20px;
+    /* Внутрішній відступ карточки */
+    margin-bottom: 20px;
+    /* Відступ між карточками */
+}
+
+.btn-primary-cast-reviews { 
+  display: flex;
+    /* Використовуємо Flexbox */
+    flex-wrap: wrap;
+    /* Обгортка елементів на новий ряд */
+    justify-content: space-evenly;
+    /* Рівномірний розподіл між карточками */
+
+    margin-top: 10px;
+ 
+}
+
+.btn-primary {
+
+}
+
+
+.footer {
+ 
+    position: fixed;
+    bottom: 0;
+
+    width: 1200px;
+    margin: auto;
+
+  background-color: #333;
+  /* Колір фону футера */
+  color: #fff;
+  /* Колір тексту */
+  padding: 20px;
+  /* Відступи від країв футера */
+  /* text-align: center; */
+  /* Вирівнювання тексту по центру */
 }

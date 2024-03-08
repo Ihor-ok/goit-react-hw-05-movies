@@ -60,9 +60,9 @@ const Movies = () => {
 
     return (
         <div>
-            <form onSubmit={(evt) => { onSubmit(evt) }}>
-                <input type="text" value={movieTitle} onChange={updateQueryString} />
-                <button type="submit">Search</button>
+            <form className="d-flex" role="search" onSubmit={(evt) => { onSubmit(evt) }}>
+                <input  className="form-control me-2" type="search" placeholder="Search movie" aria-label="Search" value={movieTitle} onChange={updateQueryString} />
+                <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
            
             <ul>

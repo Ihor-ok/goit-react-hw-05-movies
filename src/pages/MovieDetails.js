@@ -42,20 +42,24 @@ const MovieDetails = () => {
         <>
            
             {isLoading && (<p>Loading...</p>)}
-
             {isDownloaded && <Link to={backLinkLocationRef.current.state}>Go back</Link>}
-            {isDownloaded && <h2>Movie: {movie}</h2> }
-            {isDownloaded && <p>User Score: {userScore.toFixed(2)}%</p>}
-            {isDownloaded && <img src={srcPosterr} alt={movie} width="200" height="300" ></img>}
-            {isDownloaded && <p>Overview: {overview}</p>}
-            {isDownloaded && <p>Genres: {genresTitle.join(' ')}</p>}
-            
-            {isDownloaded && <ul>
+            <div className="card" style={{}}>
+                {isDownloaded && <img className="card-img-top" src={srcPosterr} alt={movie} width="200px" height="300px" ></img>}
+                <div className="card-body">
+                    {isDownloaded && <h2 className="card-title">Movie: {movie}</h2>}
+                    {isDownloaded && <p className="card-text">User Score: {userScore.toFixed(2)}%</p>}
+                    {isDownloaded && <p className="card-text">Overview: {overview}</p>}
+            {isDownloaded && <p className="card-text">Genres: {genresTitle.join(' ')}</p>}
+                </div>
+            </div>
+  
+                        
+            {isDownloaded && <ul className="btn-primary-cast-reviews">
                 <li>
-                    <Link to="cast">Cast</Link>
+                    <Link className="btn btn-primary" to="cast">Cast</Link>
                 </li>
                 <li>
-                    <Link to="reviews">Reviews</Link>
+                    <Link className="btn btn-primary" to="reviews">Reviews</Link>
                 </li>
             </ul>}
 

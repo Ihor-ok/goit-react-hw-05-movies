@@ -16,11 +16,11 @@ const Cast = () => {
 
     return (
         <>
-            <ul>
+            <ul className="card-list-cast">
                 {casts.map(cast => {
                 return (
                     
-                        <li key={cast.id}>
+                        <li className="card-list-cast-item " key={cast.id}>
                             <img src={srcPosterr + cast.profile_path} alt={cast.name} width="100" height="150"></img>
                             <p>{cast.name}</p>
                             <p>Character: {cast.character}</p>
